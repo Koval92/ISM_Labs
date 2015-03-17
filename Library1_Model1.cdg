@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Library1_Model1">
+  <ClassDiagramComponents>
+    <Class xPosition="20.0" yPosition="20.0" package="library1" name="TBook" visibility="public">
+      <Constructors>
+        <Constructor name="TBook" visibility="public"/>
+      </Constructors>
+      <Fields>
+        <Field name="number" visibility="private" type="int"/>
+      </Fields>
+      <Methods>
+        <Method name="period_pass" visibility="public" returnType="boolean">
+          <Argument type="Object" name="data"/>
+        </Method>
+        <Method name="startPeriod" visibility="public" returnType="void">
+          <Argument type="Object" name="data"/>
+        </Method>
+        <Method name="getNumber" visibility="public" returnType="int"/>
+        <Method name="setNumber" visibility="public" returnType="void">
+          <Argument type="int" name="number"/>
+        </Method>
+        <Method name="getmTitle_book" visibility="public" returnType="TTitle_book"/>
+        <Method name="setmTitle_book" visibility="public" returnType="void">
+          <Argument type="TTitle_book" name="mTitle_book"/>
+        </Method>
+        <Method name="getPeriod" visibility="public" returnType="Date"/>
+        <Method name="setPeriod" visibility="public" returnType="void">
+          <Argument type="Date" name="period"/>
+        </Method>
+        <Method name="toString" visibility="public" returnType="String"/>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="Object" name="obj"/>
+        </Method>
+
+      </Methods>
+    </Class>
+    <Class xPosition="320.0" yPosition="20.0" package="library1" name="TBook_period" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="period" visibility="private" type="Date"/>
+      </Fields>
+      <Methods>
+        <Method name="getPeriod" visibility="public" returnType="Date"/>
+        <Method name="setPeriod" visibility="public" returnType="void">
+          <Argument type="Date" name="period"/>
+        </Method>
+        <Method name="period_pass" visibility="public" returnType="boolean">
+          <Argument type="Object" name="data"/>
+        </Method>
+        <Method name="startPeriod" visibility="public" returnType="void">
+          <Argument type="Object" name="data"/>
+        </Method>
+        <Method name="toString" visibility="public" returnType="String"/>
+      </Methods>
+    </Class>
+    <Class xPosition="620.0" yPosition="20.0" package="library1" name="TFacade" visibility="public">
+      <Constructors>
+        <Constructor name="TFacade" visibility="public"/>
+      </Constructors>
+      <Fields/>
+      <Methods>
+        <Method name="getmTitle_books" visibility="public" returnType="List&lt;TTitle_book&gt;"/>
+        <Method name="setmTitle_books" visibility="public" returnType="void">
+          <Argument type="List&lt;TTitle_book&gt;" name="mTitle_books"/>
+        </Method>
+        <Method name="main" visibility="public" returnType="void" isStatic="true">
+          <Argument type="String[]" name="t"/>
+        </Method>
+        <Method name="gettitle_books" visibility="public" returnType="Object[][]"/>
+        <Method name="search_title_book" visibility="public" returnType="TTitle_book">
+          <Argument type="TTitle_book" name="title_book"/>
+        </Method>
+        <Method name="add_title_book" visibility="public" returnType="String">
+          <Argument type="String[]" name="data"/>
+        </Method>
+        <Method name="add_book" visibility="public" returnType="ArrayList&lt;String&gt;">
+          <Argument type="String[]" name="data1"/>
+          <Argument type="String[]" name="data2"/>
+        </Method>
+        <Method name="Search_title_book" visibility="public" returnType="ArrayList&lt;String&gt;">
+          <Argument type="String[]" name="data"/>
+        </Method>
+        <Method name="Search_accessible_book" visibility="public" returnType="String">
+          <Argument type="String[]" name="data1"/>
+          <Argument type="Object" name="data2"/>
+        </Method>
+        <Method name="Print_books" visibility="public" returnType="void"/>
+        <Method name="Print_title_books" visibility="public" returnType="void"/>
+      </Methods>
+    </Class>
+    <Class xPosition="651.0" yPosition="378.0" package="library1" name="TFactory" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="day" visibility="package" type="long" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Methods>
+        <Method name="mdays" visibility="public" returnType="Date" isStatic="true">
+          <Argument type="String" name="data"/>
+        </Method>
+        <Method name="create_title_book" visibility="public" returnType="TTitle_book">
+          <Argument type="String[]" name="data"/>
+        </Method>
+        <Method name="create_book" visibility="public" returnType="TBook">
+          <Argument type="String[]" name="data"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="20.0" yPosition="420.0" package="library1" name="TTitle_book" visibility="public">
+      <Constructors>
+        <Constructor name="TTitle_book" visibility="public"/>
+      </Constructors>
+      <Fields>
+        <Field name="publisher" visibility="private" type="String"/>
+        <Field name="ISBN" visibility="private" type="String"/>
+        <Field name="title" visibility="private" type="String"/>
+        <Field name="author" visibility="private" type="String"/>
+      </Fields>
+      <Methods>
+        <Method name="getPublisher" visibility="public" returnType="String"/>
+        <Method name="setPublisher" visibility="public" returnType="void">
+          <Argument type="String" name="publisher"/>
+        </Method>
+        <Method name="getISBN" visibility="public" returnType="String"/>
+        <Method name="setISBN" visibility="public" returnType="void">
+          <Argument type="String" name="ISBN"/>
+        </Method>
+        <Method name="getTitle" visibility="public" returnType="String"/>
+        <Method name="setTitle" visibility="public" returnType="void">
+          <Argument type="String" name="title"/>
+        </Method>
+        <Method name="getAuthor" visibility="public" returnType="String"/>
+        <Method name="setAuthor" visibility="public" returnType="void">
+          <Argument type="String" name="author"/>
+        </Method>
+        <Method name="getmBooks" visibility="public" returnType="List&lt;TBook&gt;"/>
+        <Method name="setmBooks" visibility="public" returnType="void">
+          <Argument type="List&lt;TBook&gt;" name="mBooks"/>
+        </Method>
+        <Method name="toString" visibility="public" returnType="String"/>
+        <Method name="toString_" visibility="public" returnType="String[]"/>
+        <Method name="hashCode" visibility="public" returnType="int"/>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="getActor" visibility="public" returnType="String"/>
+        <Method name="setActor" visibility="public" returnType="void">
+          <Argument type="String" name="val"/>
+        </Method>
+        <Method name="add_book" visibility="public" returnType="ArrayList&lt;String&gt;">
+          <Argument type="String[]" name="data"/>
+        </Method>
+        <Method name="search_book" visibility="public" returnType="TBook">
+          <Argument type="TBook" name="book"/>
+        </Method>
+        <Method name="search_accessible_book" visibility="public" returnType="String">
+          <Argument type="Object" name="data"/>
+        </Method>
+        <Method name="getbooks" visibility="public" returnType="ArrayList&lt;String&gt;"/>
+      </Methods>
+    </Class>
+    <Class xPosition="320.0" yPosition="420.0" package="library1" name="TTitle_book_on_tape" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="actor" visibility="private" type="String"/>
+      </Fields>
+      <Methods>
+        <Method name="getActor" visibility="public" returnType="String"/>
+        <Method name="setActor" visibility="public" returnType="void">
+          <Argument type="String" name="actor"/>
+        </Method>
+       <Method name="toString" visibility="public" returnType="String"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="TFactory" target="TBook" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="TBook" target="TTitle_book" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="TBook_period" target="TBook"/>
+    <UseRelation source="TFactory" target="TTitle_book" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mBooks" source="TTitle_book" target="TBook" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation source="TTitle_book" target="TBook" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mTitle_books" source="TFacade" target="TTitle_book" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List"/>
+    <IsRelation name="is" source="TTitle_book_on_tape" target="TTitle_book"/>
+    <UseRelation source="TFacade" target="TTitle_book" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mTitle_book" source="TBook" target="TTitle_book" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
