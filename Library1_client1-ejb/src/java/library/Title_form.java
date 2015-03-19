@@ -91,7 +91,7 @@ public class Title_form extends JPanel implements ActionListener {
             return null;
         } else {
             s = s.replaceAll(" ", "_");
-            title.setText(s);
+            val.setText(s);
             return s;
         }
     }

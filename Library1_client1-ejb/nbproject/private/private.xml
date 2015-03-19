@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/OneDrive/Dropbox/Studia/I%20sem/Information%20Systems%20Modelling/Labs/Library1_client1-ejb/src/java/client_tier/Client.java</file>
-            <file>file:/E:/OneDrive/Dropbox/Studia/I%20sem/Information%20Systems%20Modelling/Labs/Library1_client1-ejb/src/java/library/Loan_form.java</file>
+            <file>file:/E:/ISM_Labs/Library1_client1-ejb/src/java/library/Panel_util.java</file>
+            <file>file:/E:/ISM_Labs/Library1_client1-ejb/src/java/library/Card0.java</file>
+            <file>file:/E:/ISM_Labs/Library1_client1-ejb/src/java/library/Title_form.java</file>
+            <file>file:/E:/ISM_Labs/Library1_client1-ejb/src/java/library/Book_form.java</file>
+            <file>file:/E:/ISM_Labs/Library1_client1-ejb/src/java/client_tier/Client.java</file>
+            <file>file:/E:/ISM_Labs/Library1_client1-ejb/src/java/library/Loan_form.java</file>
         </group>
     </open-files>
 </project-private>
