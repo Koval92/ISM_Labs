@@ -21,6 +21,11 @@ public class Loan_form extends JPanel implements ActionListener {
         add(b1);
        }
 
+    public void init()
+    {
+        
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         //tutaj mo na wywolac uslugi

@@ -96,11 +96,13 @@ public class Panel_util implements ActionListener {
         //Create the content-pane-to-be.
 
         Client_form card0 = new Client_form();
+        card0.init();
         Title_form card1 = new Title_form();
         card1.init();
         Book_form card2 = new Book_form();
         card2.init();
         Loan_form card3 = new Loan_form();
+        card3.init();
 
         //Create the panel that contains the "cards".
         cards = new JPanel(new CardLayout());
@@ -149,6 +151,4 @@ public class Panel_util implements ActionListener {
         //Display the window.
         frame.setVisible(true);
     }
-
-   
 }
