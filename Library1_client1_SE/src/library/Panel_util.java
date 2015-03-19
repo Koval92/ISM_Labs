@@ -33,7 +33,7 @@ public class Panel_util implements ActionListener {
  
     public JMenuBar createMenuBar() {
         JMenuBar menuBar;
-        JMenu menu, submenu;
+        JMenu menu;
         JMenuItem menuItem;
 
         //Create the menu bar.
@@ -66,8 +66,7 @@ public class Panel_util implements ActionListener {
         menu.add(menuItem);
 
 //        menu.addSeparator();
-//
-//        submenu = new JMenu("A submenu");
+//        JMenu submenu = new JMenu("A submenu");
 //        submenu.setMnemonic(KeyEvent.VK_S);
 //
 //        menuItem = new JMenuItem(CLIENT);
