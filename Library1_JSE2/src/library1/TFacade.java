@@ -123,6 +123,18 @@ public class TFacade {
         }
         return title_books;
     }
+    
+    public Object[][] getClientsTable(){
+        Object[][] clientsTable = new String[mClients.size()][3];
+        int i = 0;
+        
+        for(TClient client : mClients)
+        {
+            clientsTable[i++] = client.toStringArray();
+        }
+        
+        return clientsTable;
+    }
 
     public TTitle_book search_title_book(TTitle_book title_book) {
         int idx = mTitle_books.indexOf(title_book);

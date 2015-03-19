@@ -67,4 +67,11 @@ public class TClient {
         else
             return base + ", Name: " + clientName;
     }
+    
+    public String[] toStringArray(){
+        String[] clientAsArray = {  Integer.toString(clientId), 
+                                    Integer.toString(loans.size()), 
+                                    clientName};
+        return clientAsArray;
+    }
 }
