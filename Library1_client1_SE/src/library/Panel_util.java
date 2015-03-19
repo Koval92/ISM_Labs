@@ -26,7 +26,7 @@ import javax.swing.KeyStroke;
 public class Panel_util implements ActionListener {
       
     JPanel cards; //a panel that uses CardLayout
-    final static String NOTHING1 = "Empty1";
+    final static String CLIENT = "Clients";
     final static String TITLE = "Title form";
     final static String BOOK = "Book form";
     final static String LOAN = "Loan book";
@@ -60,7 +60,7 @@ public class Panel_util implements ActionListener {
         menuItem.addActionListener(this);
         menu.add(menuItem);
 
-        menuItem = new JMenuItem(NOTHING1);
+        menuItem = new JMenuItem(CLIENT);
         menuItem.setMnemonic(KeyEvent.VK_E);
         menuItem.addActionListener(this);
         menu.add(menuItem);
@@ -70,13 +70,13 @@ public class Panel_util implements ActionListener {
         submenu = new JMenu("A submenu");
         submenu.setMnemonic(KeyEvent.VK_S);
 
-        menuItem = new JMenuItem(NOTHING1);
+        menuItem = new JMenuItem(CLIENT);
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_2, ActionEvent.ALT_MASK));
         menuItem.addActionListener(this);
         submenu.add(menuItem);
 
-        menuItem = new JMenuItem(NOTHING1);
+        menuItem = new JMenuItem(CLIENT);
         menuItem.addActionListener(this);
         submenu.add(menuItem);
         
@@ -95,7 +95,7 @@ public class Panel_util implements ActionListener {
     public Container createContentPane() {
         //Create the content-pane-to-be.
 
-        Card0 card0 = new Card0();
+        Client_form card0 = new Client_form();
         Title_form card1 = new Title_form();
         card1.init();
         Book_form card2 = new Book_form();
@@ -104,7 +104,7 @@ public class Panel_util implements ActionListener {
 
         //Create the panel that contains the "cards".
         cards = new JPanel(new CardLayout());
-        cards.add(card0, NOTHING1);
+        cards.add(card0, CLIENT);
         cards.add(card1, TITLE);
         cards.add(card2, BOOK);
         cards.add(card3, LOAN);
@@ -124,8 +124,8 @@ public class Panel_util implements ActionListener {
             cl.show(cards, TITLE);
         } else if (source.getText().equals(BOOK)) {
             cl.show(cards, BOOK);
-        } else if (source.getText().equals(NOTHING1)) {
-            cl.show(cards, NOTHING1);
+        } else if (source.getText().equals(CLIENT)) {
+            cl.show(cards, CLIENT);
         } else if (source.getText().equals(LOAN)) {
             cl.show(cards, LOAN);
 
