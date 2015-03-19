@@ -39,7 +39,7 @@ public class Panel_util implements ActionListener {
         //Create the menu bar.
         menuBar = new JMenuBar();
 
-        menu = new JMenu("A Menu");
+        menu = new JMenu("Library");
         menu.setMnemonic(KeyEvent.VK_A);
         menuBar.add(menu);
 
@@ -65,27 +65,27 @@ public class Panel_util implements ActionListener {
         menuItem.addActionListener(this);
         menu.add(menuItem);
 
-        menu.addSeparator();
+//        menu.addSeparator();
+//
+//        submenu = new JMenu("A submenu");
+//        submenu.setMnemonic(KeyEvent.VK_S);
+//
+//        menuItem = new JMenuItem(CLIENT);
+//        menuItem.setAccelerator(KeyStroke.getKeyStroke(
+//                KeyEvent.VK_2, ActionEvent.ALT_MASK));
+//        menuItem.addActionListener(this);
+//        submenu.add(menuItem);
+//
+//        menuItem = new JMenuItem(CLIENT);
+//        menuItem.addActionListener(this);
+//        submenu.add(menuItem);
+//        
+//        menu.add(submenu);
 
-        submenu = new JMenu("A submenu");
-        submenu.setMnemonic(KeyEvent.VK_S);
-
-        menuItem = new JMenuItem(CLIENT);
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_2, ActionEvent.ALT_MASK));
-        menuItem.addActionListener(this);
-        submenu.add(menuItem);
-
-        menuItem = new JMenuItem(CLIENT);
-        menuItem.addActionListener(this);
-        submenu.add(menuItem);
-        
-        menu.add(submenu);
-
-        //Build second menu in the menu bar.
-        menu = new JMenu("Another Menu");
-        menu.setMnemonic(KeyEvent.VK_N);
-        menuBar.add(menu);
+//        //Build second menu in the menu bar.
+//        menu = new JMenu("Another Menu");
+//        menu.setMnemonic(KeyEvent.VK_N);
+//        menuBar.add(menu);
 
         return menuBar;
     }
