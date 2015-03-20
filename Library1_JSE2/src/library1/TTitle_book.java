@@ -109,11 +109,10 @@ public class TTitle_book {
     public ArrayList<String> add_book(String[] data) {
         TFactory factory = new TFactory();
         TBook newbook = factory.create_book(data);
-
+        newbook.setmTitle_book(this);
         if(search_book(newbook) == null)
         {
             mBooks.add(newbook);
-            newbook.setmTitle_book(this);
             return getbooks();
         }
         return null;
