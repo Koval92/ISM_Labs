@@ -54,14 +54,14 @@ public class Panel_util implements ActionListener {
         menuItem.setMnemonic(KeyEvent.VK_B);
         menuItem.addActionListener(this);
         menu.add(menuItem);
-
-        menuItem = new JMenuItem(LOAN);
-        menuItem.setMnemonic(KeyEvent.VK_L);
+        
+        menuItem = new JMenuItem(CLIENT);
+        menuItem.setMnemonic(KeyEvent.VK_C);
         menuItem.addActionListener(this);
         menu.add(menuItem);
 
-        menuItem = new JMenuItem(CLIENT);
-        menuItem.setMnemonic(KeyEvent.VK_E);
+        menuItem = new JMenuItem(LOAN);
+        menuItem.setMnemonic(KeyEvent.VK_L);
         menuItem.addActionListener(this);
         menu.add(menuItem);
 
@@ -93,21 +93,20 @@ public class Panel_util implements ActionListener {
 
     public Container createContentPane() {
         //Create the content-pane-to-be.
-
-        Client_form card0 = new Client_form();
-        card0.init();
-        Title_form card1 = new Title_form();
-        card1.init();
-        Book_form card2 = new Book_form();
+        Client_form card2 = new Client_form();
         card2.init();
+        Title_form card0 = new Title_form();
+        card0.init();
+        Book_form card1 = new Book_form();
+        card1.init();
         Loan_form card3 = new Loan_form();
         card3.init();
 
         //Create the panel that contains the "cards".
         cards = new JPanel(new CardLayout());
-        cards.add(card0, CLIENT);
-        cards.add(card1, TITLE);
-        cards.add(card2, BOOK);
+        cards.add(card0, TITLE);
+        cards.add(card1, BOOK);
+        cards.add(card2, CLIENT);
         cards.add(card3, LOAN);
 
         JPanel p1 = new JPanel();
@@ -129,7 +128,6 @@ public class Panel_util implements ActionListener {
             cl.show(cards, CLIENT);
         } else if (source.getText().equals(LOAN)) {
             cl.show(cards, LOAN);
-
         }
     }
 

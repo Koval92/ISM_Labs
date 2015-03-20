@@ -124,7 +124,6 @@ public class Book_form extends JPanel implements ActionListener {
     }
 
     void print_books() {
-
         ArrayList<String> help3 = Client.getFacade().Search_title_book(title());
         if (help3 != null) {
             list_content(help3, books);

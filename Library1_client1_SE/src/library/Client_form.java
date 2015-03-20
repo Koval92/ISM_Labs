@@ -46,7 +46,6 @@ public class Client_form extends JPanel implements ActionListener{
             return;
         }
         Client.getFacade().add_client(data);
-        Client.getFacade().printClients();
     }
     
     public String[] form_client() {
