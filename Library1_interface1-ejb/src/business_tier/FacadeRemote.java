@@ -15,4 +15,9 @@ public interface FacadeRemote {
     public ArrayList<String> add_book(String data1[], String data2[]);
     public ArrayList<String> Search_title_book(String data[]);
     public String Search_accessible_book(String data1[], Object data2);
+    public ArrayList<String> add_client(String[] data);
+    public Object[][] getClientsTable();
+    public ArrayList<String> add_loan(String[] clientData, String[] titleBookData);
+    public ArrayList<String> searchClientsLoans(String[] data);
+    
 }

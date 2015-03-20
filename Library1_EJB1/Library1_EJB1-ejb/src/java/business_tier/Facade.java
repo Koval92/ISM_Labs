@@ -27,4 +27,20 @@ public class Facade implements FacadeRemote {
     @Override
     public String Search_accessible_book(String data1[], Object data2) {
         return facade.Search_accessible_book(data1, data2); }
+    @Override
+    public ArrayList<String> add_client(String[] data) {
+        return facade.add_client(data);
+    }
+    @Override
+    public Object[][] getClientsTable() {
+        return facade.getClientsTable();
+    }
+    @Override
+    public ArrayList<String> add_loan(String[] clientData, String[] titleBookData) {
+        return facade.add_loan(clientData, titleBookData);
+    }
+    @Override
+    public ArrayList<String> searchClientsLoans(String[] data) {
+        return facade.searchClientsLoans(data);
+    }
 }
