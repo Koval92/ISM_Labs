@@ -22,7 +22,7 @@ public class TClient {
     {
         ArrayList<String> loansAsStrings = new ArrayList<>();
         for(TLoan loan : loans)
-            loansAsStrings.add(loan.toString());
+            loansAsStrings.add(loan.getBookAsString());
         return loansAsStrings;
     }
 

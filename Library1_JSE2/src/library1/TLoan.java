@@ -34,4 +34,8 @@ public class TLoan {
     String getClientAsString() {
         return " Client: " + client.getClientId();
     }
+
+    String getBookAsString() {
+        return book.toString();
+    }
 }

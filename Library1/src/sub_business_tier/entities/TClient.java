@@ -22,7 +22,7 @@ public class TClient {
     {
         ArrayList<String> loansAsStrings = new ArrayList<>();
         for(TLoan loan : loans)
-            loansAsStrings.add(loan.toString());
+            loansAsStrings.add(loan.getBookAsString());
         return loansAsStrings;
     }
 
@@ -66,5 +66,12 @@ public class TClient {
             return base;
         else
             return base + ", Name: " + clientName;
+    }
+    
+    public String[] toStringArray(){
+        String[] clientAsArray = {  Integer.toString(clientId), 
+                                    Integer.toString(loans.size()), 
+                                    clientName};
+        return clientAsArray;
     }
 }

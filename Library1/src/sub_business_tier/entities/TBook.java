@@ -75,8 +75,6 @@ public class TBook {
         return true;
     }
 
-
-
     private String loanToString() {
             return loan == null ? "" : loan.getClientAsString();
     }

@@ -101,8 +101,8 @@ public class TFacade {
         ap.add_client(client4);
         ap.printClients();
         
-        String titleBookToLoan1[] = {"0", "ISBN1"};
-        String titleBookToLoan2[] = {"0", "ISBN2"};
+        String titleBookToLoan1[] = {"0", "ISBN1", ""};
+        String titleBookToLoan2[] = {"0", "ISBN2", ""};
         String titleBookToLoan3[] = {"2", "ISBN1", "Actor1"};
         String titleBookToLoan4[] = {"2", "ISBN4", "Actor4"};
         
@@ -125,6 +125,18 @@ public class TFacade {
             title_books[i]=next.toString_();
         }
         return title_books;
+    }
+    
+    public Object[][] getClientsTable(){
+        Object[][] clientsTable = new String[mClients.size()][3];
+        int i = 0;
+        
+        for(TClient client : mClients)
+        {
+            clientsTable[i++] = client.toStringArray();
+        }
+        
+        return clientsTable;
     }
 
     public TTitle_book search_title_book(TTitle_book title_book) {
@@ -222,7 +234,6 @@ public class TFacade {
     public ArrayList<String> add_loan(String[] clientData, String[] titleBookData)
     {
         TFactory factory = new TFactory();
-        
         TClient client = search_client(new TClient(clientData));
         if(client == null)
             return null;
@@ -231,10 +242,11 @@ public class TFacade {
         titleBook = search_title_book(titleBook);
         if(titleBook == null)
             return null;
-        
         TBook availableBook = titleBook.getAvailableBook();
         if(availableBook == null)
+        {
             return null;
+        }
         return client.add_loan(availableBook, new String[0]);
     }
 
@@ -263,5 +275,11 @@ public class TFacade {
         if(idx != -1)
             return mClients.get(idx);
         return null;
+    }
+    
+    public ArrayList<String> searchClientsLoans(String[] data){
+        TClient client = search_client(new TClient(data));
+        
+        return client.getLoansAsStrings();
     }
 }
