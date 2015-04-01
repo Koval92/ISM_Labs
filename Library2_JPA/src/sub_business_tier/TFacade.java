@@ -25,6 +25,23 @@ public class TFacade {
     public void setmTitle_books(List<TTitle_book> mTitle_books) {
         this.mTitle_books = mTitle_books;
     }
+    
+    public synchronized void update_data(TTitle_book titles[], TBook books[]) {
+        mTitle_books.clear();
+        for (TTitle_book t : titles) {
+            mTitle_books.add(t);
+        }
+        for (TTitle_book title : mTitle_books) {
+            for (TBook book : books) {
+                TTitle_book title1 = book.getmTitle_book();
+                if (title1 != null) {
+                    if (title1.equals(title)) {
+                        title.getmBooks().add(book);
+                    }
+                }
+            }
+        }
+    }
 
     public static void main(String[] t) {
         System.out.println("1st iteration");
