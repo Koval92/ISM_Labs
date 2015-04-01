@@ -184,13 +184,4 @@ public class TTitle_book implements Serializable {
         }
         return title_books;
     }
-
-    public TBook getAvailableBook() {
-        for(TBook book : mBooks)
-        {
-            if (book.getLoan() == null)
-                return book;
-        }
-        return null;
-    }
 }

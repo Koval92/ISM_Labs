@@ -14,7 +14,6 @@ public class TBook implements Serializable{
     private static final long serialVersionUID = 1L;
     
     private int number;
-    private TLoan loan = null;
     
     @ManyToOne
     TTitle_book mTitle_book;
@@ -32,14 +31,6 @@ public class TBook implements Serializable{
 
     public void setId(Long Id) {
         this.Id = Id;
-    }
-
-    public TLoan getLoan() {
-        return loan;
-    }
-
-    public void setLoan(TLoan loan) {
-        this.loan = loan;
     }
 
     public int getNumber() {
@@ -74,7 +65,7 @@ public class TBook implements Serializable{
 
     @Override
     public String toString() {
-        return mTitle_book.toString() + " Number: " + number + loanToString();
+        return mTitle_book.toString() + " Number: " + number;
     }
 
     @Override
@@ -99,9 +90,5 @@ public class TBook implements Serializable{
             return false;
         }
         return true;
-    }
-
-    private String loanToString() {
-            return loan == null ? "" : loan.getClientAsString();
     }
 }

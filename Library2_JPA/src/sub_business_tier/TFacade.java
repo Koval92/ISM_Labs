@@ -5,17 +5,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import sub_business_tier.entities.TBook;
-import sub_business_tier.entities.TClient;
 import sub_business_tier.entities.TTitle_book;
 
 public class TFacade {
 
     List<TTitle_book> mTitle_books;
-    List<TClient> mClients;
 
     public TFacade() {
         mTitle_books = new ArrayList<>();
-        mClients = new ArrayList<>();
     }
 
     public List<TTitle_book> getmTitle_books() {
@@ -104,31 +101,6 @@ public class TFacade {
         System.out.println("Searching of an accessible book of a select title");
         System.out.println(ap.Search_accessible_book(d4, "2"));
         System.out.println();
-       
-        // 2nd assessment
-        String[] client1 = {"1", "Adam Nowak"};
-        String[] client2 = {"2", ""};
-        String[] client3 = {"2", "Jan Kwiatkowski"};
-        String[] client4 = {"1", ""};
-        ap.add_client(client1);
-        ap.add_client(client2);
-        ap.add_client(client1);
-        ap.add_client(client2);
-        ap.add_client(client3);
-        ap.add_client(client4);
-        ap.printClients();
-        
-        String titleBookToLoan1[] = {"0", "ISBN1", ""};
-        String titleBookToLoan2[] = {"0", "ISBN2", ""};
-        String titleBookToLoan3[] = {"2", "ISBN1", "Actor1"};
-        String titleBookToLoan4[] = {"2", "ISBN4", "Actor4"};
-        
-        ap.add_loan(client1, titleBookToLoan1);
-        ap.add_loan(client1, titleBookToLoan2);
-        ap.add_loan(client2, titleBookToLoan3);
-        ap.add_loan(client2, titleBookToLoan1);
-        ap.printClients();
-        ap.Print_books();
     }
 
     public Object[][] gettitle_books() {
@@ -142,18 +114,6 @@ public class TFacade {
             title_books[i]=next.toString_();
         }
         return title_books;
-    }
-    
-    public Object[][] getClientsTable(){
-        Object[][] clientsTable = new String[mClients.size()][3];
-        int i = 0;
-        
-        for(TClient client : mClients)
-        {
-            clientsTable[i++] = client.toStringArray();
-        }
-        
-        return clientsTable;
     }
 
     public TTitle_book search_title_book(TTitle_book title_book) {
@@ -239,64 +199,5 @@ public class TFacade {
                 out.print(property.toString() + " ");
             out.println();
         }
-    }
-    
-    public void printClients()
-    {
-        System.out.println("Clients:");
-        for(TClient client : mClients)
-            System.out.println(client);
-    }
-
-    public ArrayList<String> add_loan(String[] clientData, String[] titleBookData)
-    {
-        TFactory factory = new TFactory();
-        TClient client = search_client(new TClient(clientData));
-        if(client == null)
-            return null;
-        
-        TTitle_book titleBook = factory.create_title_book(titleBookData);
-        titleBook = search_title_book(titleBook);
-        if(titleBook == null)
-            return null;
-        TBook availableBook = titleBook.getAvailableBook();
-        if(availableBook == null)
-        {
-            return null;
-        }
-        return client.add_loan(availableBook, new String[0]);
-    }
-
-    public ArrayList<String> add_client(String[] data)
-    {
-        TClient newClient = new TClient(data);
-        if(search_client(newClient) == null)
-        {
-            mClients.add(newClient);
-            return getListOfClientsAsStrings();
-        }
-        return null;
-    }
-
-    public ArrayList<String> getListOfClientsAsStrings()
-    {
-        ArrayList<String> listOfClients = new ArrayList<>();
-        for(TClient client : mClients)
-            listOfClients.add(client.toString());
-        return listOfClients;
-    }
-
-    public TClient search_client(TClient client)
-    {
-        int idx = mClients.indexOf(client);
-        if(idx != -1)
-            return mClients.get(idx);
-        return null;
-    }
-    
-    public ArrayList<String> searchClientsLoans(String[] data){
-        TClient client = search_client(new TClient(data));
-        
-        return client.getLoansAsStrings();
     }
 }
