@@ -5,6 +5,8 @@
  */
 package integration_tier;
 
+import java.util.Iterator;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,4 +30,17 @@ public class TTitle_bookFacade extends AbstractFacade<TTitle_book> {
         super(TTitle_book.class);
     }
     
+    public TTitle_book[] getTTitle_books_() { 
+        return findAll().toArray(new TTitle_book[0]); 
+    } 
+    public void addTTitle_books(List<TTitle_book> titles) { 
+        TTitle_book newTTitle_book; 
+        Iterator<TTitle_book> it = titles.iterator(); 
+        while (it.hasNext()) { 
+            newTTitle_book = it.next(); 
+            if (newTTitle_book.getId() == null) { 
+                getEntityManager().persist(newTTitle_book); 
+            } 
+        } 
+    }
 }
